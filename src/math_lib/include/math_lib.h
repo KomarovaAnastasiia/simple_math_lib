@@ -1,5 +1,4 @@
 #include "math_lib.h"
-
 // Функція для обчислення квадратного кореня методом Ньютона
 double sqrt_newton(double number, double epsilon) {
     if (number < 0) {
