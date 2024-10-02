@@ -1,54 +1,11 @@
-#define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING
-#include <gtest/gtest.h>
-#include <fstream>
+#include "gtest/gtest.h"
 #include "math_lib.h"
 
-class MathLibTestFixture : public ::testing::Test
-{
-protected:
-
-    void SetUp() override
-    {
-		// Do some job before test run
-    }
-
-    void TearDown() override
-    {
-		// Do some job after test run
-    }
-};
-
-TEST_F(MathLibTestFixture, AddTwoValues)
-{
-    EXPECT_EQ(MathLib::add(10.5, 2.5), 13.0);
-}
-
-TEST_F(MathLibTestFixture, SubTwoValues)
-{
-
-    EXPECT_TRUE();
-
-    EXPECT_NE(text.find("FirstLine"), std::string::npos);
-    EXPECT_EQ(text.find("SecondLine"), std::string::npos);
-    EXPECT_NE(text.find("ThirdLine"), std::string::npos);
-}
-
-TEST_F(MathLibTestFixture, MultiplyTwoValues)
-{
-
-    EXPECT_TRUE(GetLogFileText(text));
-    EXPECT_NE(text.find("[thread"), std::string::npos);
-}
-
-TEST_F(MathLibTestFixture, DivideTwoValues)
-{
-
-    EXPECT_TRUE(GetLogFileText(text));
-    EXPECT_NE(text.find("[Info]"), std::string::npos);
-}
-
-TEST_F(MathLibTestFixture, DivideByZero)
-{
-    EXPECT_TRUE(GetLogFileText(text));
-    EXPECT_NE(text.find("[Info]"), std::string::npos);
+// Тест для функції обчислення квадратного кореня
+TEST(MathLibrary, SqrtNewton) {
+    EXPECT_NEAR(sqrt_newton(4.0), 2.0, 1e-6);  // Корінь з 4 має бути 2
+    EXPECT_NEAR(sqrt_newton(9.0), 3.0, 1e-6);  // Корінь з 9 має бути 3
+    EXPECT_NEAR(sqrt_newton(0.0), 0.0, 1e-6);  // Корінь з 0 має бути 0
+    EXPECT_NEAR(sqrt_newton(1.0), 1.0, 1e-6);  // Корінь з 1 має бути 1
+    EXPECT_NEAR(sqrt_newton(2.0), 1.414213, 1e-6);  // Приблизний корінь з 2
 }
